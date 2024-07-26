@@ -65,5 +65,9 @@ then
   git config --global user.email 'github-actions[bot]@users.noreply.github.com'
   git add -A --force public/status/
   git commit -am '[Automated] Update Health Check Logs'
+
+  # Use the personal access token for authentication
+  git remote set-url origin https://$GH_PAT@github.com/Spendbase/status-page.git
+
   git push
 fi
