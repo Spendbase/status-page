@@ -13,8 +13,12 @@ jobs:
     name: Check all sites
     steps:
       - uses: actions/checkout@v2
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
       - name: Run Shell Script
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
         id: shell_script_run
         run: bash ./scripts/health-check.sh

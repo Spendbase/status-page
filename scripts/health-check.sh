@@ -60,13 +60,11 @@ done
 
 if [[ $commit == true ]]
 then
-  echo ${GH_PAT}
-  echo ${GITHUB_REPOSITORY}
   echo "committing logs"
   git config --global user.name 'github-actions[bot]'
   git config --global user.email 'github-actions[bot]@users.noreply.github.com'
   git add -A --force public/status/
-  git commit -am '[Automated] Update Health Check Logs'z
-  git remote set-url origin "https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}"
+  git commit -am '[Automated] Update Health Check Logs'
+  git remote add origin git@github.com:Spendbase/status-page.git
   git push
 fi
