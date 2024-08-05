@@ -66,8 +66,7 @@ then
   git config --global user.name 'github-actions[bot]'
   git config --global user.email 'github-actions[bot]@users.noreply.github.com'
   git add -A --force public/status/
-  git commit -am '[Automated] Update Health Check Logs'
-  git remote remove origin
+  git commit -am '[Automated] Update Health Check Logs'z
   git remote set-url origin "https://${GH_PAT}@github.com/${GITHUB_REPOSITORY}"
   git push
 fi
