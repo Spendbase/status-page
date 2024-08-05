@@ -67,5 +67,5 @@ then
   git commit -am '[Automated] Update Health Check Logs'
   git remote remove origin
   git remote add origin git@github.com:Spendbase/status-page.git
-  git push
+  git push --set-upstream origin main
 fi
