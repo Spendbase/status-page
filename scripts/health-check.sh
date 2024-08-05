@@ -65,6 +65,7 @@ then
   git config --global user.email 'github-actions[bot]@users.noreply.github.com'
   git add -A --force public/status/
   git commit -am '[Automated] Update Health Check Logs'
+  git remote remove origin
   git remote add origin git@github.com:Spendbase/status-page.git
   git push
 fi
