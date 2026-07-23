@@ -7,6 +7,9 @@ on:
   schedule:
     - cron: "0 * * * *"
 
+permissions:
+  contents: read
+
 jobs:
   health_check_job:
     runs-on: ubuntu-latest
